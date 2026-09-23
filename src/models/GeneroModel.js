@@ -6,18 +6,17 @@ const GeneroModel = {
 
         return result
     },
-    
-async create(data) {
-    const { nome } = data
 
-    const result = await connection.raw(
-        "INSERT INTO generos (nome) VALUES (?)",
-        [ nome ]
-    )
+    async create(data) {
+        const { nome } = data
 
-    return result
-}    
+        const result = await connection.raw(
+            "INSERT INTO generos (nome) VALUES (?)",
+            [ nome ]
+        )
 
+        return result
+    }
 }
 
 module.exports = GeneroModel

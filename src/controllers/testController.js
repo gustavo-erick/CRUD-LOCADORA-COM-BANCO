@@ -1,24 +1,19 @@
 const connection = require("../database/connection")
 
 const testConnection = async (req, res) => {
-
     try {
-         const result = connection.raw("SELECT 1+1 as result")
+        await connection.raw("SELECT 1+1 as result")
 
-    
-    return res.json({message:"Banco conectado com sucesso ;)"})
-        
+        return res.json({ message: "Banco conectado com sucesso :)" })
     } catch (error) {
-        return res.status(500).json({message:"Erro ao conectar com o banco :("})
-        
+        return res.status(500).json({ message: "Erro ao conectar com o banco :(" })
     }
-   
 }
 
-const ListTables = async (req, res) => {
-    try{
+const listTables = async (req, res) => {
+    try {
         const tables = await connection.raw(
-            "SELECT name FROM sqlite_master WHERE type ='table'"
+            "SELECT name FROM sqlite_master WHERE type = 'table'"
         )
 
         return res.json(tables)
@@ -29,5 +24,5 @@ const ListTables = async (req, res) => {
 
 module.exports = {
     testConnection,
-    ListTables
+    listTables
 }

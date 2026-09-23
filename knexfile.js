@@ -10,9 +10,9 @@ module.exports = {
     connection: {
       filename: './src/database/database.sqlite'
     },
-    userNullAsDefault: true,
+    useNullAsDefault: true,
     migrations: {
-      directory:'./src/database/migrations'
+      directory: './src/database/migrations'
     }
   },
 

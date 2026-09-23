@@ -1,14 +1,13 @@
-const connection = require("../connection");
-
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
   return knex.schema.createTable("filmes_generos", (table) => {
-    table.increments("id").primary
+    table.increments("id").primary()
 
-    table.integer("filmes_id")
+    // relações
+    table.integer("filme_id")
         .unsigned()
         .notNullable()
         .references("id")
@@ -19,12 +18,9 @@ exports.up = function(knex) {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("filmes")
+        .inTable("generos")
         .onDelete("CASCADE")
-
   })
-
-
 };
 
 /**

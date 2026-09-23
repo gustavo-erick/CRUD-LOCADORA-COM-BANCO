@@ -3,27 +3,25 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  return knex.schema.createTable("diretores", (table) => {
-        table.increments("id").primary()
-       
+  return knex.schema.createTable("locacoes", (table) => {
+    table.increments("id").primary()
 
-
-         //relações
-        table.integer("cliente_id")
+    // relações
+    table.integer("cliente_id")
         .unsigned()
         .references("id")
         .inTable("clientes")
-
- table.integer("filme_id")
+        
+    table.integer("filme_id")
         .unsigned()
         .references("id")
         .inTable("filmes")
 
-table.date("alugado_em").notNullable()
-table.date("devolvido_em")
+    table.date("alugado_em").notNullable()
+    table.date("devolvido_em")
 
-table.timestamps(true, true)
-   })
+    table.timestamps(true, true)
+  })
 };
 
 /**
@@ -31,5 +29,5 @@ table.timestamps(true, true)
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-    return knex.schema.dropTable("locacoes")
+  return knex.schema.dropTable("locacoes")
 };
