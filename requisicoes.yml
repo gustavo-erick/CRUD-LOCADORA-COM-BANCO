@@ -9,7 +9,7 @@ meta:
 collection:
   - name: REQUISICOES DE TESTE
     meta:
-      id: fld_e20d79f777974fa8841ae50228fa03bb
+      id: fld_b5476d063bf44e57aaf9c720ed35c652
       created: 1790123536645
       modified: 1790123568349
       sortKey: -1790123536845
@@ -18,7 +18,7 @@ collection:
       - url: http://localhost:3000
         name: TESTE API
         meta:
-          id: req_e66cbf4dbebd4a2a8aa12594b5480518
+          id: req_505a581442164256a7dcb0a298f9fd41
           created: 1788302389873
           modified: 1790123546388
           isPrivate: false
@@ -41,7 +41,7 @@ collection:
       - url: localhost:3000/test
         name: TESTE CONEXÃO BANCO
         meta:
-          id: req_6b167c13aec34b37a0025be5424b5b02
+          id: req_c34581da9f314869adaecda720e27979
           created: 1788303353930
           modified: 1790123554601
           isPrivate: false
@@ -64,7 +64,7 @@ collection:
       - url: localhost:3000/test/tables
         name: "TESTE LISTAR AS TABELAS DO BANCO "
         meta:
-          id: req_dedeaba5f4c64937868f5e29f21d5487
+          id: req_6f91bebe957840e786d127907bdb1a90
           created: 1788908461856
           modified: 1790123556941
           isPrivate: false
@@ -86,7 +86,7 @@ collection:
           rebuildPath: true
   - name: GENEROS
     meta:
-      id: fld_e43ff3328ad64336aeece0541db02e99
+      id: fld_54eb06955d9a41958136bb0443ea249c
       created: 1790123581294
       modified: 1790123581294
       sortKey: -1790123581294
@@ -95,9 +95,9 @@ collection:
       - url: localhost:3000/generos
         name: CRIA GENERO
         meta:
-          id: req_51dee48e4ea5424e8a08bab12f4b57d4
+          id: req_339faeb729cf46138a29ec32c797fa1a
           created: 1790123451958
-          modified: 1790124021805
+          modified: 1791931732414
           isPrivate: false
           description: ""
           sortKey: -1790123585958
@@ -123,16 +123,195 @@ collection:
             send: true
             store: true
           rebuildPath: true
+      - url: localhost:3000/generos
+        name: LISTA TODOS OS GENEROS
+        meta:
+          id: req_2d43456d90f9448e82c4070b7f258398
+          created: 1791931749287
+          modified: 1791931828602
+          isPrivate: false
+          description: ""
+          sortKey: -1790123564992
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Ação"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: FILMES
+    meta:
+      id: fld_5660780e6a274709b7575eff9903f55e
+      created: 1791933220198
+      modified: 1791933220198
+      sortKey: -1790123559069.5
+      description: ""
+    children:
+      - url: localhost:3000/filmes
+        name: CRIA FILME
+        meta:
+          id: req_7365d8af66384170bfa389d82487ac76
+          created: 1791933220200
+          modified: 1791933488555
+          isPrivate: false
+          description: ""
+          sortKey: -1790123585958
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"titulo": "hora do rush",
+            	"diretorId": 1,
+            	"generos": [
+            		1
+            	]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/generos
+        name: LISTA TODOS OS FILMES
+        meta:
+          id: req_0ff1a2484d9447369ccebc29b8a25819
+          created: 1791933220201
+          modified: 1791933243975
+          isPrivate: false
+          description: ""
+          sortKey: -1790123564992
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Ação"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: DIRETORES
+    meta:
+      id: fld_2d18ebaf75694d19925352cb7bbae529
+      created: 1791939842127
+      modified: 1791939842127
+      sortKey: -1790123547957.25
+      description: ""
+    children:
+      - url: localhost:3000/filmes
+        name: CRIA DIRETOR
+        meta:
+          id: req_1ede217cdd374719a109e411f86c6777
+          created: 1791939842128
+          modified: 1791939854759
+          isPrivate: false
+          description: ""
+          sortKey: -1790123585958
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"titulo": "hora do rush",
+            	"diretorId": 1,
+            	"generos": [
+            		1
+            	]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/generos
+        name: LISTA TODOS OS DIRETORES
+        meta:
+          id: req_355186741e6a4a4ca6a9ce017d927262
+          created: 1791939842129
+          modified: 1791939863186
+          isPrivate: false
+          description: ""
+          sortKey: -1790123564992
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Ação"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
     id: jar_99d30891da4bdcebc63947a8fc17f076de878684
-    created: 1790117784702
-    modified: 1790117784702
+    created: 1791931195091
+    modified: 1791931195091
 environments:
   name: Base Environment
   meta:
     id: env_99d30891da4bdcebc63947a8fc17f076de878684
-    created: 1790117784699
-    modified: 1790117784699
+    created: 1791931195089
+    modified: 1791931195089
     isPrivate: false
